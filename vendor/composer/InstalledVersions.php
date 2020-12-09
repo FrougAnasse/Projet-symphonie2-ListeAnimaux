@@ -24,16 +24,25 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'v5.2.99',
-    'version' => '5.2.99.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
-    'name' => 'symfony/website-skeleton',
+    'reference' => '826c52b1176270f47db97e699bb900372ffc8dce',
+    'name' => '__root__',
   ),
   'versions' => 
   array (
+    '__root__' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '826c52b1176270f47db97e699bb900372ffc8dce',
+    ),
     'composer/package-versions-deprecated' => 
     array (
       'pretty_version' => '1.11.99.1',
@@ -79,6 +88,15 @@ private static $installed = array (
       ),
       'reference' => '9f3e3f3cc5399604c0325d5ffa92609d694d950d',
     ),
+    'doctrine/data-fixtures' => 
+    array (
+      'pretty_version' => '1.4.4',
+      'version' => '1.4.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '16a03fadb5473f49aad70384002dfd5012fe680e',
+    ),
     'doctrine/dbal' => 
     array (
       'pretty_version' => '2.12.1',
@@ -96,6 +114,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '044d33eeffdb236d5013b6b4af99f87519e10751',
+    ),
+    'doctrine/doctrine-fixtures-bundle' => 
+    array (
+      'pretty_version' => '3.4.0',
+      'version' => '3.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '870189619a7770f468ffb0b80925302e065a3b34',
     ),
     'doctrine/doctrine-migrations-bundle' => 
     array (
@@ -373,8 +400,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache-implementation' => 
@@ -1024,15 +1051,6 @@ private static $installed = array (
       array (
       ),
       'reference' => 'a1f3f170e785d3c371396ac4935c27504fcfca16',
-    ),
-    'symfony/website-skeleton' => 
-    array (
-      'pretty_version' => 'v5.2.99',
-      'version' => '5.2.99.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => NULL,
     ),
     'symfony/yaml' => 
     array (
