@@ -58,14 +58,28 @@ class __TwigTemplate_4857f9ed061f4acd4dc9649603a6c3abf3fb390b67cf88b1e38d5af4d51
         // line 7
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 8
-        echo "    </head>
+        echo "
+        <style>
+          *,::after,::before{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+          }
+
+
+          body{
+            width:100%; 
+            height:100%;
+          }
+        </style>
+    </head>
     <body>
 
         <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
             <a class=\"navbar-brand\" href=\"";
-        // line 12
+        // line 26
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("animaux");
-        echo "\">Animaux</a>
+        echo "\">Le monde du vivant</a>
             <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor02\" aria-controls=\"navbarColor02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
               <span class=\"navbar-toggler-icon\"></span>
             </button>
@@ -74,9 +88,15 @@ class __TwigTemplate_4857f9ed061f4acd4dc9649603a6c3abf3fb390b67cf88b1e38d5af4d51
               <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item\">
                   <a class=\"nav-link\" href=\"";
-        // line 20
+        // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("animaux");
-        echo "\">Accueil</a>
+        echo "\">Animaux</a>
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"";
+        // line 37
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("familles");
+        echo "\">Familles</a>
                 </li>
               </ul>
             </div>
@@ -84,17 +104,17 @@ class __TwigTemplate_4857f9ed061f4acd4dc9649603a6c3abf3fb390b67cf88b1e38d5af4d51
 
 
           <h1 class=\"border border-dark rounded p-2 m-2 text-white bg-primary\">";
-        // line 27
+        // line 44
         $this->displayBlock('monTitre', $context, $blocks);
         echo " </h1>
         
         ";
-        // line 29
+        // line 46
         $this->displayBlock('body', $context, $blocks);
-        // line 30
+        // line 47
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 31
+        // line 48
         echo "
         
         <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
@@ -147,7 +167,7 @@ class __TwigTemplate_4857f9ed061f4acd4dc9649603a6c3abf3fb390b67cf88b1e38d5af4d51
 
     }
 
-    // line 27
+    // line 44
     public function block_monTitre($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -165,7 +185,7 @@ class __TwigTemplate_4857f9ed061f4acd4dc9649603a6c3abf3fb390b67cf88b1e38d5af4d51
 
     }
 
-    // line 29
+    // line 46
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -183,7 +203,7 @@ class __TwigTemplate_4857f9ed061f4acd4dc9649603a6c3abf3fb390b67cf88b1e38d5af4d51
 
     }
 
-    // line 30
+    // line 47
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -213,7 +233,7 @@ class __TwigTemplate_4857f9ed061f4acd4dc9649603a6c3abf3fb390b67cf88b1e38d5af4d51
 
     public function getDebugInfo()
     {
-        return array (  187 => 30,  169 => 29,  151 => 27,  133 => 7,  114 => 6,  98 => 31,  95 => 30,  93 => 29,  88 => 27,  78 => 20,  67 => 12,  61 => 8,  59 => 7,  55 => 6,  48 => 1,);
+        return array (  207 => 47,  189 => 46,  171 => 44,  153 => 7,  134 => 6,  118 => 48,  115 => 47,  113 => 46,  108 => 44,  98 => 37,  92 => 34,  81 => 26,  61 => 8,  59 => 7,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -225,11 +245,25 @@ class __TwigTemplate_4857f9ed061f4acd4dc9649603a6c3abf3fb390b67cf88b1e38d5af4d51
         <link rel=\"stylesheet\" href=\"https://bootswatch.com/4/sandstone/bootstrap.min.css\">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+
+        <style>
+          *,::after,::before{
+            box-sizing: border-box;
+            margin:0;
+            padding:0;
+          }
+
+
+          body{
+            width:100%; 
+            height:100%;
+          }
+        </style>
     </head>
     <body>
 
         <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
-            <a class=\"navbar-brand\" href=\"{{path('animaux')}}\">Animaux</a>
+            <a class=\"navbar-brand\" href=\"{{path('animaux')}}\">Le monde du vivant</a>
             <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor02\" aria-controls=\"navbarColor02\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
               <span class=\"navbar-toggler-icon\"></span>
             </button>
@@ -237,7 +271,10 @@ class __TwigTemplate_4857f9ed061f4acd4dc9649603a6c3abf3fb390b67cf88b1e38d5af4d51
             <div class=\"collapse navbar-collapse\" id=\"navbarColor02\">
               <ul class=\"navbar-nav mr-auto\">
                 <li class=\"nav-item\">
-                  <a class=\"nav-link\" href=\"{{path('animaux')}}\">Accueil</a>
+                  <a class=\"nav-link\" href=\"{{path('animaux')}}\">Animaux</a>
+                </li>
+                <li class=\"nav-item\">
+                  <a class=\"nav-link\" href=\"{{path('familles')}}\">Familles</a>
                 </li>
               </ul>
             </div>

@@ -14,6 +14,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'animaux', '_controller' => 'App\\Controller\\AnimalController::index'], null, null, null, false, false, null]],
+        '/familles' => [[['_route' => 'familles', '_controller' => 'App\\Controller\\FamilleController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -32,6 +33,8 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/animal/([^/]++)(*:185)'
+                .'|/famille/([^/]++)(*:210)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -41,8 +44,10 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        185 => [[['_route' => 'afficher_animal', '_controller' => 'App\\Controller\\AnimalController::afficherAnimal'], ['id'], null, null, false, true, null]],
+        210 => [
+            [['_route' => 'afficher_famille', '_controller' => 'App\\Controller\\FamilleController::afficherFamille'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

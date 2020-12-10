@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Animal;
+use App\Entity\Famille;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 
@@ -10,6 +11,25 @@ class AnimalFixutures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+        $f1= new Famille();
+        $f2= new Famille();
+        $f3= new Famille();
+
+        $f1->setLibelle("mamiféres")
+            ->setDescription("Animaux vertébrés nourissant leurs petit avec du lait.");
+        $manager->persist($f1);
+        
+        $f2->setLibelle("reptiles")
+            ->setDescription("Animaux vertébrés qui rampent.");
+        $manager->persist($f2);
+
+        $f3->setLibelle("poisson")
+            ->setDescription("Animaux invertébrés du monde aquatique.");
+        $manager->persist($f3);
+
+
+
+
         $a1=new Animal();
         $a2=new Animal();
         $a3=new Animal();
@@ -21,6 +41,7 @@ class AnimalFixutures extends Fixture
            ->setImage("chien.png")
            ->setPoids(10)
            ->setDangereux(false)
+           ->setFamille($f1)
         ;
         $manager->persist($a1);
 
@@ -29,7 +50,7 @@ class AnimalFixutures extends Fixture
         ->setImage("cochon.png")
         ->setPoids(50)
         ->setDangereux(false)
-
+        ->setFamille($f1)
         ;
         $manager->persist($a2);
 
@@ -38,6 +59,7 @@ class AnimalFixutures extends Fixture
         ->setImage("Serpent.png")
         ->setPoids(5)
         ->setDangereux(true)
+        ->setFamille($f2)
         ;
         $manager->persist($a3);
        
@@ -46,6 +68,7 @@ class AnimalFixutures extends Fixture
         ->setImage("croco.png")
         ->setPoids(500)
         ->setDangereux(true)
+        ->setFamille($f2)
         ;
         $manager->persist($a4);
 
@@ -54,6 +77,7 @@ class AnimalFixutures extends Fixture
         ->setImage("requin.png")
         ->setPoids(800)
         ->setDangereux(true)
+        ->setFamille($f3)
         ;
         $manager->persist($a5);
 

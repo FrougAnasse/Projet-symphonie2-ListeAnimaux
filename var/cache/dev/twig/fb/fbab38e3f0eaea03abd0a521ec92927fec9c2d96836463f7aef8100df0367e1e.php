@@ -114,7 +114,7 @@ class __TwigTemplate_d6e3692e8e3bd7b8171639e12c369db824229a1cf2fd7dd7e99beef0729
             // line 10
             echo "    <div class=\"row align-items-center\">
         <div class=\"col-2 text-center\">
-            <img src=\"";
+            <img class=\"img-fluid\" src=\"";
             // line 12
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/" . twig_get_attribute($this->env, $this->source, $context["animal"], "image", [], "any", false, false, false, 12))), "html", null, true);
             echo "\" 
@@ -124,17 +124,26 @@ class __TwigTemplate_d6e3692e8e3bd7b8171639e12c369db824229a1cf2fd7dd7e99beef0729
             echo "'/>
         </div>
         <div class=\"col-auto\">
-           <h2> ";
+           <h2> <a href=\"";
             // line 16
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("afficher_animal", ["id" => twig_get_attribute($this->env, $this->source, $context["animal"], "id", [], "any", false, false, false, 16)]), "html", null, true);
+            echo "\"> ";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "nom", [], "any", false, false, false, 16), "html", null, true);
-            echo "</h2>
+            echo "</a></h2>
            <div>";
             // line 17
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "description", [], "any", false, false, false, 17), "html", null, true);
             echo "</div>
+           <div><a href=\"";
+            // line 18
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("afficher_famille", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["animal"], "famille", [], "any", false, false, false, 18), "id", [], "any", false, false, false, 18)]), "html", null, true);
+            echo "\" class=\"btn btn-primary\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["animal"], "famille", [], "any", false, false, false, 18), "libelle", [], "any", false, false, false, 18), "html", null, true);
+            echo "</a></div>
         </div>
+        
     </div>
-   
+  
        
 
     ";
@@ -142,7 +151,7 @@ class __TwigTemplate_d6e3692e8e3bd7b8171639e12c369db824229a1cf2fd7dd7e99beef0729
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['animal'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 24
+        // line 26
         echo "
 
 ";
@@ -166,7 +175,7 @@ class __TwigTemplate_d6e3692e8e3bd7b8171639e12c369db824229a1cf2fd7dd7e99beef0729
 
     public function getDebugInfo()
     {
-        return array (  146 => 24,  133 => 17,  129 => 16,  123 => 13,  119 => 12,  115 => 10,  111 => 9,  108 => 8,  98 => 7,  79 => 6,  60 => 3,  37 => 1,);
+        return array (  155 => 26,  139 => 18,  135 => 17,  129 => 16,  123 => 13,  119 => 12,  115 => 10,  111 => 9,  108 => 8,  98 => 7,  79 => 6,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -182,15 +191,17 @@ class __TwigTemplate_d6e3692e8e3bd7b8171639e12c369db824229a1cf2fd7dd7e99beef0729
     {% for animal in animaux %}
     <div class=\"row align-items-center\">
         <div class=\"col-2 text-center\">
-            <img src=\"{{asset('images/' ~ animal.image)}}\" 
+            <img class=\"img-fluid\" src=\"{{asset('images/' ~ animal.image)}}\" 
                 alt='{{animal.image}}'/>
         </div>
         <div class=\"col-auto\">
-           <h2> {{animal.nom}}</h2>
+           <h2> <a href=\"{{path('afficher_animal',{'id':animal.id})}}\"> {{animal.nom}}</a></h2>
            <div>{{animal.description}}</div>
+           <div><a href=\"{{ path('afficher_famille',{'id': animal.famille.id}) }}\" class=\"btn btn-primary\">{{animal.famille.libelle}}</a></div>
         </div>
+        
     </div>
-   
+  
        
 
     {% endfor %}
