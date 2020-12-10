@@ -355,6 +355,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\ContinentRepository" class="App\Repository\ContinentRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\FamilleRepository" class="App\Repository\FamilleRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -4104,7 +4108,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.tLZZSEm"/>
+      <argument type="service" id=".service_locator.5hFauIV"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5090,6 +5094,8 @@
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AnimalRepository" class="App\Repository\AnimalRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AnimalRepository" class="App\Repository\AnimalRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContinentRepository" class="App\Repository\ContinentRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ContinentRepository" class="App\Repository\ContinentRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FamilleRepository" class="App\Repository\FamilleRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\FamilleRepository" class="App\Repository\FamilleRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.Kbr2i2X" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -5614,10 +5620,11 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.tLZZSEm" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.5hFauIV" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AnimalRepository" type="service" id="App\Repository\AnimalRepository"/>
+        <argument key="App\Repository\ContinentRepository" type="service" id="App\Repository\ContinentRepository"/>
         <argument key="App\Repository\FamilleRepository" type="service" id="App\Repository\FamilleRepository"/>
       </argument>
     </service>
